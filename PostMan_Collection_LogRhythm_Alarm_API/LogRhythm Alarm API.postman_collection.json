@@ -1,0 +1,1550 @@
+{
+	"info": {
+		"_postman_id": "d48ec1aa-bfed-4a2a-aa1f-30ed954c9af4",
+		"name": "LogRhythm Alarm API",
+		"description": "This file describes the available endpoints for alarm api.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "alarms",
+			"item": [
+				{
+					"name": "{alarm Id}",
+					"item": [
+						{
+							"name": "Get alarm details by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/alarms/:alarmId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alarms",
+										":alarmId"
+									],
+									"variable": [
+										{
+											"key": "alarmId",
+											"value": "32325669.969734967",
+											"description": "(Required) Numeric ID of the Alarm to get"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Returns Alarm detail based on the Alarm Id.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"alarmDetails\": {\n  \"alarmId\": -27037576.521101862,\n  \"personId\": -37155406.32295547,\n  \"entityId\": 24816314.174455285,\n  \"entityName\": \"eiusmod in\",\n  \"alarmDate\": \"Duis exercitation volupta\",\n  \"alarmRuleID\": -68548365.88724114,\n  \"alarmRuleName\": \"cillum anim nisi Lorem enim\",\n  \"alarmStatus\": \"Closed_Unresolved = 7\",\n  \"alarmStatusName\": \"mollit irure nisi sit\",\n  \"lastUpdatedID\": 49777015.5533106,\n  \"lastUpdatedName\": \"reprehenderit laboris eu\",\n  \"dateInserted\": \"officia\",\n  \"dateUpdated\": \"deserunt\",\n  \"associatedCases\": [\n   \"Lorem qui in eu\",\n   \"veniam id\"\n  ],\n  \"lastPersonID\": 73302880.42451555,\n  \"eventCount\": -7263219.934636161,\n  \"eventDateFirst\": \"ad \",\n  \"eventDateLast\": \"nulla elit cillum\",\n  \"rBPMax\": -83508138.72396459,\n  \"rBPAvg\": 14793122.69230868,\n  \"executionTarget\": 71401674.23762113,\n  \"smartResponseActions\": [\n   {\n    \"srpName\": \"in tempor quis proident ea\",\n    \"executionTime\": 66675774.27843639,\n    \"actionStatus\": -73295879.82630295,\n    \"approvalLevel1Status\": 40158096.51094782,\n    \"approvalLevel2Status\": 10043030.870856121,\n    \"approvalLevel3Status\": -96683998.35423096,\n    \"standardOut\": \"ad\",\n    \"standardError\": \"tempor esse ad occaecat\",\n    \"executionTarget\": \"quis veniam\",\n    \"smartResponseAgentId\": 73798450.10420033\n   },\n   {\n    \"srpName\": \"do ut fugiat\",\n    \"executionTime\": -12244484.360210136,\n    \"actionStatus\": -40073388.603542924,\n    \"approvalLevel1Status\": 99596639.69135052,\n    \"approvalLevel2Status\": 13710818.651491195,\n    \"approvalLevel3Status\": -48040786.8697653,\n    \"standardOut\": \"id\",\n    \"standardError\": \"nisi Excepteur Duis\",\n    \"executionTarget\": \"ipsum Excepteur aliqua officia minim\",\n    \"smartResponseAgentId\": -49738545.91570084\n   }\n  ],\n  \"alarmDataCached\": \"veniam cupidatat ul\"\n },\n \"statusCode\": 2903391.8360681385,\n \"statusMessage\": \"enim in dolore esse proident\",\n \"responseMessage\": \"Excepteur irure deser\"\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								},
+								{
+									"name": "A User without correct permission tried to fetch the alarm details.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "alarm not found in database.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update Alarm Status and RBP",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"alarmStatus\": \"Opened\",\n    \"rBP\": 12716914.995007843\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/alarms/:alarmId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alarms",
+										":alarmId"
+									],
+									"variable": [
+										{
+											"key": "alarmId",
+											"value": "32325669.969734967",
+											"description": "(Required) Numeric ID of the Alarm to get"
+										}
+									]
+								},
+								"description": "Update Alarm Status and RBP. Searches existing AlarmId. Returns a 404 error if the Id does not exist. Otherwise, updates the AlarmHistory table."
+							},
+							"response": [
+								{
+									"name": "Returns Status message, status code and response message.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"alarmStatus\": \"Opened\",\n    \"rBP\": 12716914.995007843\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"statusCode\": -93056629.99267596,\n \"statusMessage\": \"dolore id elit anim voluptate\",\n \"responseMessage\": \"minim anim\"\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"alarmStatus\": \"Opened\",\n    \"rBP\": 12716914.995007843\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								},
+								{
+									"name": "A User without correct permission tried to update the Alarm.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"alarmStatus\": \"Opened\",\n    \"rBP\": 12716914.995007843\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"statusCode\": -93056629.99267596,\n \"statusMessage\": \"dolore id elit anim voluptate\",\n \"responseMessage\": \"minim anim\"\n}"
+								},
+								{
+									"name": "alarm not found in database.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"alarmStatus\": \"Opened\",\n    \"rBP\": 12716914.995007843\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update Alarm Comments",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"alarmComment\": \"incididunt nostrud officia magna tempor\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/alarms/:alarmId/comment",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alarms",
+										":alarmId",
+										"comment"
+									],
+									"variable": [
+										{
+											"key": "alarmId",
+											"value": "32325669.969734967",
+											"description": "(Required) Numeric ID of the Alarm to get"
+										}
+									]
+								},
+								"description": "Updates AlarmHistory table to add comments in Comments column based on the AlarmId supplied. Searches existing AlarmId. Returns a 404 error if the Id does not exist. Otherwise, updates the AlarmHistory table."
+							},
+							"response": [
+								{
+									"name": "Returns Status message, status code and response message.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"alarmComment\": \"incididunt nostrud officia magna tempor\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/comment",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"comment"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"statusCode\": -93056629.99267596,\n \"statusMessage\": \"dolore id elit anim voluptate\",\n \"responseMessage\": \"minim anim\"\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"alarmComment\": \"incididunt nostrud officia magna tempor\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/comment",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"comment"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								},
+								{
+									"name": "A User without correct permission tried to update the Alarm.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"alarmComment\": \"incididunt nostrud officia magna tempor\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/comment",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"comment"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"statusCode\": -93056629.99267596,\n \"statusMessage\": \"dolore id elit anim voluptate\",\n \"responseMessage\": \"minim anim\"\n}"
+								},
+								{
+									"name": "alarm not found in database.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"alarmComment\": \"incididunt nostrud officia magna tempor\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/comment",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"comment"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Get alarm history details by ID and filter criteria",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/alarms/:alarmId/history?offset=49234880&count=49234880&orderby=mollit aute&dir=mollit aute&personId=49234880&dateUpdated=mollit aute&type=mollit aute",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alarms",
+										":alarmId",
+										"history"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "49234880",
+											"description": "The number of items to skip before starting to collect the result set"
+										},
+										{
+											"key": "count",
+											"value": "49234880",
+											"description": "The numbers of items to return"
+										},
+										{
+											"key": "orderby",
+											"value": "mollit aute",
+											"description": "field name on which we want to sort the result"
+										},
+										{
+											"key": "dir",
+											"value": "mollit aute",
+											"description": "provide the order direction either ascending or descending"
+										},
+										{
+											"key": "personId",
+											"value": "49234880",
+											"description": "filter criteria"
+										},
+										{
+											"key": "dateUpdated",
+											"value": "mollit aute",
+											"description": "filter criteria return value greater than or equal to"
+										},
+										{
+											"key": "type",
+											"value": "mollit aute",
+											"description": "User can provide comment/status/rbp"
+										}
+									],
+									"variable": [
+										{
+											"key": "alarmId",
+											"value": "32325669.969734967",
+											"description": "(Required) Numeric ID of the Alarm to get"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Returns Alarm history detail based on the Alarm Id.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/history?offset=49234880&count=49234880&orderby=mollit aute&dir=mollit aute&personId=49234880&dateUpdated=mollit aute&type=mollit aute",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"history"
+											],
+											"query": [
+												{
+													"key": "offset",
+													"value": "49234880"
+												},
+												{
+													"key": "count",
+													"value": "49234880"
+												},
+												{
+													"key": "orderby",
+													"value": "mollit aute"
+												},
+												{
+													"key": "dir",
+													"value": "mollit aute"
+												},
+												{
+													"key": "personId",
+													"value": "49234880"
+												},
+												{
+													"key": "dateUpdated",
+													"value": "mollit aute"
+												},
+												{
+													"key": "type",
+													"value": "mollit aute"
+												}
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"statusCode\": 50511580.431572735,\n \"statusMessage\": \"aute nostrud\",\n \"responseMessage\": \"sint\",\n \"AlarmHistoryDetails\": [\n  {\n   \"alarmId\": 63448450.41772261,\n   \"personId\": 16790390.97721131,\n   \"comments\": \"ad commodo in in\",\n   \"dateUpdated\": \"occaecat\",\n   \"dateInserted\": \"Ut Lorem incididunt et\"\n  },\n  {\n   \"alarmId\": -24685913.390500724,\n   \"personId\": 91655010.13949132,\n   \"comments\": \"est cillum id\",\n   \"dateUpdated\": \"id dolore proident nulla\",\n   \"dateInserted\": \"nulla Ut fugiat\"\n  }\n ]\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/history?offset=49234880&count=49234880&orderby=mollit aute&dir=mollit aute&personId=49234880&dateUpdated=mollit aute&type=mollit aute",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"history"
+											],
+											"query": [
+												{
+													"key": "offset",
+													"value": "49234880"
+												},
+												{
+													"key": "count",
+													"value": "49234880"
+												},
+												{
+													"key": "orderby",
+													"value": "mollit aute"
+												},
+												{
+													"key": "dir",
+													"value": "mollit aute"
+												},
+												{
+													"key": "personId",
+													"value": "49234880"
+												},
+												{
+													"key": "dateUpdated",
+													"value": "mollit aute"
+												},
+												{
+													"key": "type",
+													"value": "mollit aute"
+												}
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								},
+								{
+									"name": "A User without correct permission tried to fetch the alarm history details.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/history?offset=49234880&count=49234880&orderby=mollit aute&dir=mollit aute&personId=49234880&dateUpdated=mollit aute&type=mollit aute",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"history"
+											],
+											"query": [
+												{
+													"key": "offset",
+													"value": "49234880"
+												},
+												{
+													"key": "count",
+													"value": "49234880"
+												},
+												{
+													"key": "orderby",
+													"value": "mollit aute"
+												},
+												{
+													"key": "dir",
+													"value": "mollit aute"
+												},
+												{
+													"key": "personId",
+													"value": "49234880"
+												},
+												{
+													"key": "dateUpdated",
+													"value": "mollit aute"
+												},
+												{
+													"key": "type",
+													"value": "mollit aute"
+												}
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "alarm not found in database.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/history?offset=49234880&count=49234880&orderby=mollit aute&dir=mollit aute&personId=49234880&dateUpdated=mollit aute&type=mollit aute",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"history"
+											],
+											"query": [
+												{
+													"key": "offset",
+													"value": "49234880"
+												},
+												{
+													"key": "count",
+													"value": "49234880"
+												},
+												{
+													"key": "orderby",
+													"value": "mollit aute"
+												},
+												{
+													"key": "dir",
+													"value": "mollit aute"
+												},
+												{
+													"key": "personId",
+													"value": "49234880"
+												},
+												{
+													"key": "dateUpdated",
+													"value": "mollit aute"
+												},
+												{
+													"key": "type",
+													"value": "mollit aute"
+												}
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Get alarm summary by alarmId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/alarms/:alarmId/summary",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alarms",
+										":alarmId",
+										"summary"
+									],
+									"variable": [
+										{
+											"key": "alarmId",
+											"value": "32325669.969734967",
+											"description": "(Required) Numeric ID of the Alarm to get"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Returns Alarm history detail based on the Alarm Id.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/summary",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"summary"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"alarmSummaryDetails\": {\n  \"dateInserted\": \"eiusmod la\",\n  \"rbpMax\": 15114430.357470006,\n  \"rbpAvg\": 61192298.985533714,\n  \"alarmRuleId\": -94957257.31762855,\n  \"alarmRuleGroup\": \"occaecat reprehenderit\",\n  \"briefDescription\": \"amet quis eu culpa consectetur\",\n  \"additionalDetails\": \"enim est quis\",\n  \"alarmEventSummary\": [\n   {\n    \"msgClassId\": 52884414.58113295,\n    \"msgClassName\": \"enim irure ad reprehenderit ullamco\",\n    \"commonEventId\": -87909447.28483362,\n    \"commonEventName\": \"laboris amet proident eu dolore\",\n    \"originHostId\": 75454415.68148667,\n    \"impactedHostId\": \"dolor sint elit cillum\",\n    \"originUser\": \"nostrud quis id ex\",\n    \"impactedUser\": \"Duis proident\",\n    \"originUserIdentityId\": 32679585.754304424,\n    \"impactedUserIdentityId\": -26614656.57393633,\n    \"originUserIdentityName\": \"sed \",\n    \"impactedUserIdentityName\": \"anim nisi et\",\n    \"originEntityName\": \"nostrud ad in incidid\",\n    \"impactedEntityName\": \"mollit tempor aliqua dolor\"\n   },\n   {\n    \"msgClassId\": -59231287.21484221,\n    \"msgClassName\": \"in Ut\",\n    \"commonEventId\": 95809018.08891541,\n    \"commonEventName\": \"pariatur in\",\n    \"originHostId\": -47782834.1940977,\n    \"impactedHostId\": \"et adipisicing id\",\n    \"originUser\": \"a\",\n    \"impactedUser\": \"culpa est irure mollit\",\n    \"originUserIdentityId\": -73676645.00010714,\n    \"impactedUserIdentityId\": -6418328.590081438,\n    \"originUserIdentityName\": \"aliqua i\",\n    \"impactedUserIdentityName\": \"eiusmod in laborum incididunt\",\n    \"originEntityName\": \"dolor labore\",\n    \"impactedEntityName\": \"sunt ullamco Lorem\"\n   }\n  ]\n },\n \"statusCode\": 62290350.837197125,\n \"statusMessage\": \"eiusmod laboris sunt nostrud\",\n \"responseMessage\": \"proident\"\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/summary",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"summary"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								},
+								{
+									"name": "A User without correct permission tried to fetch the alarm history details.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/summary",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"summary"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "alarm not found in database.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/summary",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"summary"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Get events by alarmId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/alarms/:alarmId/events",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alarms",
+										":alarmId",
+										"events"
+									],
+									"variable": [
+										{
+											"key": "alarmId",
+											"value": "32325669.969734967",
+											"description": "(Required) Numeric ID of the Alarm to get"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Returns Events detail based on the Alarm Id.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/events",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"events"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"alarmsEventDetails\": [\n  {\n   \"account\": \"sunt ipsum Lorem non et\",\n   \"action\": \"ea sunt incididunt d\",\n   \"amount\": 75022631.66852793,\n   \"bytesIn\": \"Duis pariatur\",\n   \"bytesOut\": \"dolor do\",\n   \"classificationId\": 49749437.96809256,\n   \"classificationName\": \"magna nisi laborum elit Lorem\",\n   \"classificationTypeName\": \"sed ad cillum\",\n   \"command\": \"dolore irure aliquip sed\",\n   \"commonEventId\": -78156177.81847975,\n   \"cve\": \"voluptate cillum\",\n   \"commonEventName\": \"enim Lorem\",\n   \"count\": -22666800.71906811,\n   \"directionId\": -56024203.03261524,\n   \"directionName\": \"nulla in irure\",\n   \"domain\": \"in\",\n   \"duration\": -52683458.271726556,\n   \"entityId\": -91032372.87141144,\n   \"entityName\": \"Duis ex occaecat nisi\",\n   \"group\": \"anim eli\",\n   \"impactedEntityId\": 96677572.74232599,\n   \"impactedEntityName\": \"dolor\",\n   \"impactedHostId\": 56897162.670419455,\n   \"impactedHostName\": \"nulla c\",\n   \"impactedInterface\": \"consectetur labore eu\",\n   \"impactedIP\": \"ullamco sed Ut in dolor\",\n   \"impactedLocation\": {\n    \"countryCode\": \"eu veniam in velit in\",\n    \"name\": \"e\",\n    \"latitude\": 32224247.08442144,\n    \"locationId\": -19995878.21181445,\n    \"locationKey\": \"est Lorem sunt\",\n    \"longitude\": -30165519.516219735,\n    \"parentLocationId\": 22737136.633897886,\n    \"recordStatus\": \"dolor sed magna occaeca\",\n    \"regionCode\": \"velit\",\n    \"type\": \"pariatur consequat cupidatat reprehenderit irure\",\n    \"dateUpdated\": \"sint\"\n   },\n   \"impactedMAC\": \"ad dolore ex qui\",\n   \"impactedName\": \"tempor minim nostrud\",\n   \"impactedNATIP\": \"et magna\",\n   \"impactedNATPort\": \"ad sint ea\",\n   \"impactedNetwork\": {\n    \"beginIPRange\": {\n     \"value\": \"laboris\"\n    },\n    \"dateUpdated\": \"sit occaecat irure mollit\",\n    \"riskThreshold\": \"veniam\",\n    \"endIPRange\": {\n     \"value\": \"tempor\"\n    },\n    \"entityId\": -57852377.03223904,\n    \"hostZone\": \"sunt labore proident ad\",\n    \"locationId\": 58225705.26791701,\n    \"longDesc\": \"Duis ut proident\",\n    \"name\": \"reprehenderit culpa commodo veniam Excepteur\",\n    \"networkId\": -78325362.55244054,\n    \"recordStatus\": \"cillum voluptate reprehenderit\",\n    \"shortDesc\": \"veniam eiusmod\"\n   },\n   \"impactedPort\": -83474557.0698769,\n   \"impactedZone\": \"qui reprehender\",\n   \"itemsPacketsIn\": -60283964.97169495,\n   \"itemsPacketsOut\": -64500389.72459358,\n   \"logDate\": \"laborum dolore non tempor\",\n   \"login\": \"ea nulla culpa do\",\n   \"logMessage\": \"cillum in labo\",\n   \"logSourceHostId\": 60532215.4082436,\n   \"logSourceHostName\": \"mollit sint officia\",\n   \"logSourceName\": \"laborum\",\n   \"logSourceTypeName\": \"incididunt pariatur officia anim\",\n   \"messageId\": 76247174.12446779,\n   \"mpeRuleId\": 27634827.583499223,\n   \"mpeRuleName\": \"d\",\n   \"normalDateMax\": \"proident pariatur sed e\",\n   \"objectName\": \"deserunt irure reprehenderit tempor\",\n   \"objectType\": \"in exercitation anim dolore\",\n   \"originEntityId\": -80819887.90074232,\n   \"originEntityName\": \"qui consectetur reprehenderit aute\",\n   \"originHostId\": 83963709.28261736,\n   \"originHostName\": \"an\",\n   \"originInterface\": \"irure eiusmod\",\n   \"originIP\": \"ullamco aute nostrud\",\n   \"originLocation\": {\n    \"countryCode\": \"ea Ut laboris aliqua\",\n    \"name\": \"sunt cupidatat\",\n    \"latitude\": -86298429.16226687,\n    \"locationId\": 70658717.9448058,\n    \"locationKey\": \"occaecat commodo\",\n    \"longitude\": -19318239.012158632,\n    \"parentLocationId\": 14312201.065959498,\n    \"recordStatus\": \"mollit\",\n    \"regionCode\": \"consectetur veniam\",\n    \"type\": \"irure ex\",\n    \"dateUpdated\": \"quis Lorem sit sunt velit\"\n   },\n   \"originMAC\": \"irure nisi dolore\",\n   \"originName\": \"cupidatat\",\n   \"originNATIP\": \"do\",\n   \"originNATPort\": \"aliquip cillum\",\n   \"originNetwork\": {\n    \"beginIPRange\": {\n     \"value\": \"ex Lorem eu commodo\"\n    },\n    \"dateUpdated\": \"dolore adipisicing\",\n    \"riskThreshold\": \"dolor consequat dolore\",\n    \"endIPRange\": {\n     \"value\": \"eiusm\"\n    },\n    \"entityId\": 83285097.29826707,\n    \"hostZone\": \"ex incididunt do Excepteur in\",\n    \"locationId\": 36265459.11796811,\n    \"longDesc\": \"culpa commodo\",\n    \"name\": \"culpa\",\n    \"networkId\": 84318968.15118739,\n    \"recordStatus\": \"consectetur qui mollit laborum\",\n    \"shortDesc\": \"minim non irure\"\n   },\n   \"originPort\": 91193056.70741168,\n   \"originZone\": \"irure Duis\",\n   \"parentProcessId\": \"nisi mollit nu\",\n   \"parentProcessName\": \"adipisicing qui incididunt ad id\",\n   \"parentProcessPath\": \"reprehenderit\",\n   \"policy\": \"ad tempor velit qui ex\",\n   \"priority\": 5969889.4543714225,\n   \"process\": \"anim consequat velit\",\n   \"processId\": 6598100.416468129,\n   \"protocolId\": -5085118.722675338,\n   \"protocolName\": \"proident magna dolor\",\n   \"quantity\": 50620340.95090735,\n   \"rate\": -83576089.48927191,\n   \"reason\": \"nostrud eiusmod officia Duis laboris\",\n   \"recipient\": \"dolor occaecat commodo fugiat est\",\n   \"result\": \"aliqua\",\n   \"responseCode\": \"\",\n   \"sender\": \"elit laborum deserunt proident quis\",\n   \"session\": \"reprehenderit elit \",\n   \"sessionType\": \"cillum exercitation ut\",\n   \"serialNumber\": \"mollit Duis\",\n   \"serviceId\": 94032019.60065871,\n   \"serviceName\": \"esse deserunt magna ullamco\",\n   \"severity\": \"eiusmod labore est ullamco\",\n   \"status\": \"ut aute laboris\",\n   \"size\": 53609516.7299155,\n   \"subject\": \"ut exercitation culpa ex\",\n   \"threatId\": \"sed veniam culpa\",\n   \"threatName\": \"minim o\",\n   \"url\": \"do quis\",\n   \"userAgent\": \"tempor\",\n   \"vendorInfo\": \"aliqua consequat\",\n   \"vendorMsgId\": 70659701.6275177,\n   \"version\": \"deserunt sint\",\n   \"originUserIdentityName\": \"ut incididunt\",\n   \"impactedUserIdentityName\": \"est in\",\n   \"originUserIdentityId\": 53046007.51565975,\n   \"impactedUserIdentityId\": 82265458.78252617,\n   \"senderIdentityId\": 21035841.918374613,\n   \"senderIdentityName\": \"sunt Lorem in culpa\",\n   \"recipientIdentityId\": -87644344.93868785,\n   \"recipientIdentityName\": \"sed sunt do\"\n  },\n  {\n   \"account\": \"Duis aliqua veniam velit\",\n   \"action\": \"ut ex\",\n   \"amount\": 60680408.91522518,\n   \"bytesIn\": \"magna dolor\",\n   \"bytesOut\": \"esse anim\",\n   \"classificationId\": -35620135.04762169,\n   \"classificationName\": \"mollit irure\",\n   \"classificationTypeName\": \"fugiat commodo\",\n   \"command\": \"m\",\n   \"commonEventId\": 62451263.83607745,\n   \"cve\": \"id dolor et\",\n   \"commonEventName\": \"est amet tempor do\",\n   \"count\": 57684764.03892672,\n   \"directionId\": -76193198.7522439,\n   \"directionName\": \"in aute consequat minim\",\n   \"domain\": \"laborum mollit amet in consequat\",\n   \"duration\": -61536904.726462714,\n   \"entityId\": 86429477.7647093,\n   \"entityName\": \"dolore deserunt cillu\",\n   \"group\": \"Excepteur sit consectetur\",\n   \"impactedEntityId\": 5869611.102555931,\n   \"impactedEntityName\": \"sunt tempor\",\n   \"impactedHostId\": 93637203.97936732,\n   \"impactedHostName\": \"mollit culpa consectetur commodo ea\",\n   \"impactedInterface\": \"Excepteur minim officia nisi eli\",\n   \"impactedIP\": \"i\",\n   \"impactedLocation\": {\n    \"countryCode\": \"id culpa enim\",\n    \"name\": \"Lorem Duis amet cupidatat et\",\n    \"latitude\": -60954541.31763902,\n    \"locationId\": -26082148.337277994,\n    \"locationKey\": \"tempor ut\",\n    \"longitude\": 87522417.53069043,\n    \"parentLocationId\": 18313397.88169411,\n    \"recordStatus\": \"deserunt aute\",\n    \"regionCode\": \"ullamco ut\",\n    \"type\": \"eiusmod velit dolore\",\n    \"dateUpdated\": \"qui eu sed in est\"\n   },\n   \"impactedMAC\": \"magna exercitation\",\n   \"impactedName\": \"in ipsum\",\n   \"impactedNATIP\": \"dolor quis\",\n   \"impactedNATPort\": \"exercitation dolor sunt\",\n   \"impactedNetwork\": {\n    \"beginIPRange\": {\n     \"value\": \"Excepteur \"\n    },\n    \"dateUpdated\": \"o\",\n    \"riskThreshold\": \"minim\",\n    \"endIPRange\": {\n     \"value\": \"mollit\"\n    },\n    \"entityId\": 18733905.179838926,\n    \"hostZone\": \"dolor laboris ullamco\",\n    \"locationId\": 36644417.50615731,\n    \"longDesc\": \"voluptate laboris fugiat\",\n    \"name\": \"esse\",\n    \"networkId\": 47732950.29579976,\n    \"recordStatus\": \"laboris\",\n    \"shortDesc\": \"aliquip officia consectetur\"\n   },\n   \"impactedPort\": -62454638.62397349,\n   \"impactedZone\": \"do ut\",\n   \"itemsPacketsIn\": 10246109.09208472,\n   \"itemsPacketsOut\": 38937733.05288425,\n   \"logDate\": \"labore\",\n   \"login\": \"nisi\",\n   \"logMessage\": \"ex enim\",\n   \"logSourceHostId\": 37614394.49576226,\n   \"logSourceHostName\": \"cillum mollit aliquip occaecat\",\n   \"logSourceName\": \"dolor do Excep\",\n   \"logSourceTypeName\": \"eius\",\n   \"messageId\": 6011174.188849598,\n   \"mpeRuleId\": -15782795.391625687,\n   \"mpeRuleName\": \"in consecte\",\n   \"normalDateMax\": \"laborum aliquip\",\n   \"objectName\": \"incididunt dolor sunt do eiusmod\",\n   \"objectType\": \"cillum reprehenderit\",\n   \"originEntityId\": -27159159.95572859,\n   \"originEntityName\": \"qui sunt culpa nisi minim\",\n   \"originHostId\": 14514902.947422653,\n   \"originHostName\": \"irure cupidatat quis pariatur\",\n   \"originInterface\": \"sunt labore id Lorem eu\",\n   \"originIP\": \"fugiat labo\",\n   \"originLocation\": {\n    \"countryCode\": \"nisi Ut\",\n    \"name\": \"nostrud qui eiusmod quis consectetur\",\n    \"latitude\": 21219211.028360844,\n    \"locationId\": -96407284.89457157,\n    \"locationKey\": \"ullamco sed aliqua quis\",\n    \"longitude\": 31162830.36392042,\n    \"parentLocationId\": 81077739.43919718,\n    \"recordStatus\": \"velit ut\",\n    \"regionCode\": \"quis\",\n    \"type\": \"eu id aliqua dolor occaecat\",\n    \"dateUpdated\": \"amet qui adipisicing nulla\"\n   },\n   \"originMAC\": \"qui culpa magna Lorem proident\",\n   \"originName\": \"ut non\",\n   \"originNATIP\": \"aliquip ex dolor deserunt\",\n   \"originNATPort\": \"ullamco ipsum occaecat do minim\",\n   \"originNetwork\": {\n    \"beginIPRange\": {\n     \"value\": \"quis consequat in amet commodo\"\n    },\n    \"dateUpdated\": \"ullamco quis anim enim consectetur\",\n    \"riskThreshold\": \"aliqua culpa id\",\n    \"endIPRange\": {\n     \"value\": \"irure officia\"\n    },\n    \"entityId\": -51019450.399258435,\n    \"hostZone\": \"nisi\",\n    \"locationId\": 82804721.59669244,\n    \"longDesc\": \"nostrud deserunt\",\n    \"name\": \"quis est\",\n    \"networkId\": -10362991.221005082,\n    \"recordStatus\": \"pariatur exercitation ad in minim\",\n    \"shortDesc\": \"magna id\"\n   },\n   \"originPort\": -41513107.99986767,\n   \"originZone\": \"in pariatur \",\n   \"parentProcessId\": \"proident cupidatat et quis\",\n   \"parentProcessName\": \"dolore minim\",\n   \"parentProcessPath\": \"deserunt voluptate ex Lorem\",\n   \"policy\": \"sint id Duis qui laborum\",\n   \"priority\": -79433508.14328597,\n   \"process\": \"minim consequat\",\n   \"processId\": 50861151.18134239,\n   \"protocolId\": -86168343.05642542,\n   \"protocolName\": \"fugiat eu sed nulla anim\",\n   \"quantity\": 16712318.836135104,\n   \"rate\": 18933990.398465455,\n   \"reason\": \"quis in dolore elit aliquip\",\n   \"recipient\": \"ad in\",\n   \"result\": \"ex ullamco\",\n   \"responseCode\": \"cillum sed Lorem\",\n   \"sender\": \"consectetur\",\n   \"session\": \"ut aliquip Ut\",\n   \"sessionType\": \"culpa dolore esse mollit ullamco\",\n   \"serialNumber\": \"aliqua ea aute\",\n   \"serviceId\": -6998380.329947114,\n   \"serviceName\": \"consectetur\",\n   \"severity\": \"elit\",\n   \"status\": \"dolore ut irure cillum Ut\",\n   \"size\": 22036544.891716093,\n   \"subject\": \"ad\",\n   \"threatId\": \"cupidatat\",\n   \"threatName\": \"ullamco commodo nostrud tempor\",\n   \"url\": \"fugiat\",\n   \"userAgent\": \"anim cupidatat quis ad sint\",\n   \"vendorInfo\": \"anim sint enim Excepteur\",\n   \"vendorMsgId\": -84935060.82690728,\n   \"version\": \"nulla labor\",\n   \"originUserIdentityName\": \"dolore ad\",\n   \"impactedUserIdentityName\": \"dolor ullamco proident labore dolore\",\n   \"originUserIdentityId\": 57255101.05288762,\n   \"impactedUserIdentityId\": -1335372.5107235163,\n   \"senderIdentityId\": -8648459.461179495,\n   \"senderIdentityName\": \"in dolore sit fugiat\",\n   \"recipientIdentityId\": -56285390.018469885,\n   \"recipientIdentityName\": \"eu Duis\"\n  }\n ],\n \"statusCode\": -30180169.970208943,\n \"statusMessage\": \"elit\",\n \"responseMessage\": \"adipisicing ea\"\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/events",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"events"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								},
+								{
+									"name": "A User without correct permission tried to fetch the alarm history details.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/events",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"events"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "alarm not found in database.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/alarms/:alarmId/events",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alarms",
+												":alarmId",
+												"events"
+											],
+											"variable": [
+												{
+													"key": "alarmId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get alarm details using filter criteria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/alarms?offset=49234880&count=49234880&orderby=mollit aute&dir=mollit aute&alarmRuleName=mollit aute&alarmStatus=mollit aute&entityName=mollit aute&Notification=mollit aute&caseAssociation=mollit aute&dateInserted=mollit aute",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"alarms"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "49234880",
+									"description": "The number of items to skip before starting to collect the result set"
+								},
+								{
+									"key": "count",
+									"value": "49234880",
+									"description": "The numbers of items to return"
+								},
+								{
+									"key": "orderby",
+									"value": "mollit aute",
+									"description": "field name (AlarmRuleName, AlarmStatus, DateInserted and entityName) on which user can sort the result"
+								},
+								{
+									"key": "dir",
+									"value": "mollit aute",
+									"description": "provide the order direction either ascending or descending"
+								},
+								{
+									"key": "alarmRuleName",
+									"value": "mollit aute",
+									"description": "filter criteria"
+								},
+								{
+									"key": "alarmStatus",
+									"value": "mollit aute",
+									"description": "filter criteria"
+								},
+								{
+									"key": "entityName",
+									"value": "mollit aute",
+									"description": "filter criteria"
+								},
+								{
+									"key": "Notification",
+									"value": "mollit aute",
+									"description": "filter criteria"
+								},
+								{
+									"key": "caseAssociation",
+									"value": "mollit aute",
+									"description": "filter criteria"
+								},
+								{
+									"key": "dateInserted",
+									"value": "mollit aute",
+									"description": "filter criteria"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Returns Alarm history detail based on the Alarm Id.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/alarms?offset=49234880&count=49234880&orderby=mollit aute&dir=mollit aute&alarmRuleName=mollit aute&alarmStatus=mollit aute&entityName=mollit aute&Notification=mollit aute&caseAssociation=mollit aute&dateInserted=mollit aute",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alarms"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "49234880"
+										},
+										{
+											"key": "count",
+											"value": "49234880"
+										},
+										{
+											"key": "orderby",
+											"value": "mollit aute"
+										},
+										{
+											"key": "dir",
+											"value": "mollit aute"
+										},
+										{
+											"key": "alarmRuleName",
+											"value": "mollit aute"
+										},
+										{
+											"key": "alarmStatus",
+											"value": "mollit aute"
+										},
+										{
+											"key": "entityName",
+											"value": "mollit aute"
+										},
+										{
+											"key": "Notification",
+											"value": "mollit aute"
+										},
+										{
+											"key": "caseAssociation",
+											"value": "mollit aute"
+										},
+										{
+											"key": "dateInserted",
+											"value": "mollit aute"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"alarmsSearchDetails\": [\n  {\n   \"alarmId\": -57981806.11021127,\n   \"alarmRuleName\": \"reprehenderit tempor\",\n   \"alarmStatus\": \"adipisicing et\",\n   \"alarmDataCached\": \"aliqua esse Duis\",\n   \"associatedCases\": [\n    \"dolore\",\n    \"amet fugiat ea et reprehenderit\"\n   ],\n   \"entityName\": \"Excepteur culpa labore\",\n   \"dateInserted\": \"fugiat minim\"\n  },\n  {\n   \"alarmId\": -75010013.98204555,\n   \"alarmRuleName\": \"et id\",\n   \"alarmStatus\": \"sit occaecat\",\n   \"alarmDataCached\": \"aliquip sint ea do ullamco\",\n   \"associatedCases\": [\n    \"veniam\",\n    \"eu Ut aliquip\"\n   ],\n   \"entityName\": \"laboris ipsum elit\",\n   \"dateInserted\": \"reprehenderit consectetur E\"\n  }\n ],\n \"statusCode\": -84012468.5162249,\n \"statusMessage\": \"dolor ut\",\n \"responseMessage\": \"proident v\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/alarms?offset=49234880&count=49234880&orderby=mollit aute&dir=mollit aute&alarmRuleName=mollit aute&alarmStatus=mollit aute&entityName=mollit aute&Notification=mollit aute&caseAssociation=mollit aute&dateInserted=mollit aute",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alarms"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "49234880"
+										},
+										{
+											"key": "count",
+											"value": "49234880"
+										},
+										{
+											"key": "orderby",
+											"value": "mollit aute"
+										},
+										{
+											"key": "dir",
+											"value": "mollit aute"
+										},
+										{
+											"key": "alarmRuleName",
+											"value": "mollit aute"
+										},
+										{
+											"key": "alarmStatus",
+											"value": "mollit aute"
+										},
+										{
+											"key": "entityName",
+											"value": "mollit aute"
+										},
+										{
+											"key": "Notification",
+											"value": "mollit aute"
+										},
+										{
+											"key": "caseAssociation",
+											"value": "mollit aute"
+										},
+										{
+											"key": "dateInserted",
+											"value": "mollit aute"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "A User without correct permission tried to fetch the alarm history details.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/alarms?offset=49234880&count=49234880&orderby=mollit aute&dir=mollit aute&alarmRuleName=mollit aute&alarmStatus=mollit aute&entityName=mollit aute&Notification=mollit aute&caseAssociation=mollit aute&dateInserted=mollit aute",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alarms"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "49234880"
+										},
+										{
+											"key": "count",
+											"value": "49234880"
+										},
+										{
+											"key": "orderby",
+											"value": "mollit aute"
+										},
+										{
+											"key": "dir",
+											"value": "mollit aute"
+										},
+										{
+											"key": "alarmRuleName",
+											"value": "mollit aute"
+										},
+										{
+											"key": "alarmStatus",
+											"value": "mollit aute"
+										},
+										{
+											"key": "entityName",
+											"value": "mollit aute"
+										},
+										{
+											"key": "Notification",
+											"value": "mollit aute"
+										},
+										{
+											"key": "caseAssociation",
+											"value": "mollit aute"
+										},
+										{
+											"key": "dateInserted",
+											"value": "mollit aute"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "alarm not found in database.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/alarms?offset=49234880&count=49234880&orderby=mollit aute&dir=mollit aute&alarmRuleName=mollit aute&alarmStatus=mollit aute&entityName=mollit aute&Notification=mollit aute&caseAssociation=mollit aute&dateInserted=mollit aute",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alarms"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "49234880"
+										},
+										{
+											"key": "count",
+											"value": "49234880"
+										},
+										{
+											"key": "orderby",
+											"value": "mollit aute"
+										},
+										{
+											"key": "dir",
+											"value": "mollit aute"
+										},
+										{
+											"key": "alarmRuleName",
+											"value": "mollit aute"
+										},
+										{
+											"key": "alarmStatus",
+											"value": "mollit aute"
+										},
+										{
+											"key": "entityName",
+											"value": "mollit aute"
+										},
+										{
+											"key": "Notification",
+											"value": "mollit aute"
+										},
+										{
+											"key": "caseAssociation",
+											"value": "mollit aute"
+										},
+										{
+											"key": "dateInserted",
+											"value": "mollit aute"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/lr-alarm-api",
+			"type": "string"
+		}
+	]
+}
